@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>
+        Signup
+</h1>
+ 
+
+<form action="/Add" method="post">
+     
+    <label>Username
+        
+    <input  style= "position:absolute; LEFT: 130px;  height: 11px" type="text" name="user_name" value = "{{ uName }}" />
+        {% if un_error %}
+        <span class="error">{{ un_error }}</span>
+         {% endif %}
+    </label>
+    
+    <br>
+    <label>
+        Password
+        <input style= "position:absolute; LEFT: 130px;  height: 11px" type="password" name="p_word" />
+        {% if pw_error %}
+           <span class="error-p-word">{{ pw_error }}</span> 
+        {% endif %}
+    </label>
+    <br>
+    <label>
+         Verify Password
+         <input style= "position:absolute; LEFT: 130px;  height: 11px" type="password" name="ver_password"/>
+         {% if vp_error %}
+         <span class="error-ver-pword">{{ vp_error }}</span> 
+         {% endif %}   
+     </label>
+     <br>
+    <label>
+         Email (optional)
+        <input style= "position:absolute; LEFT: 130px;  height: 11px" type="text" name="e_mail" value = "{{ eMail }}" />
+        {% if em_error %}
+            <span class="error-email">{{ em_error }}</span> 
+         {% endif %}              
+    </label> 
+    <br><br>
+    <input type="submit" value="Submit"/><h5><a href="/Reqs">    
+     
+    <h5><a href="/Reqs">Click here for input requriements</a></h5>
+     
+</form>
+
+
+{% endblock %}
+
