@@ -54,9 +54,9 @@ def sign_up():
      vp_message = ""
      em_message = ""
      user_Name = cgi.escape(request.form["user_name"], quote = True)
-     p_Word = request.form["p_word"]
-     ver_P_Word = request.form["ver_password"]
-     e_Mail = request.form["e_mail"]
+     p_Word = cgi.escape(request.form["p_word"], quote = True)
+     ver_P_Word = cgi.escape(request.form["ver_password"],quote = True)
+     e_Mail = cgi.escape(request.form["e_mail"], quote = True)
      
      if check_user_name(user_Name) == False:
          un_message =  "That is not a valid username"
